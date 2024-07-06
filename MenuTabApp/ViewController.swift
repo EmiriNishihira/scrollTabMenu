@@ -29,6 +29,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         segmentedControl.addTarget(self, action: #selector(segmentChanged(_:)), for: .valueChanged)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentedControl)
+        
+        segmentedControl.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+        segmentedControl.setBackgroundImage(UIImage(), for: .selected, barMetrics: .default)
+        segmentedControl.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
 
         // UIPageViewControllerを設定
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
